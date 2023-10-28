@@ -5,7 +5,23 @@ class InfoView {
     this.pElem = $(".info p");
   }
   setPelem(ertek) {
-    this.pElem.html(ertek + " következik!");
+    let szoveg = "";
+    switch (ertek) {
+      case 1:
+        szoveg = "X nyert";
+        break;
+      case 2:
+        szoveg = "O nyert";
+        break;
+      case 3:
+        szoveg = "Döntetlen";
+        break;
+      case "X":
+      case "O":
+        szoveg = ertek + " következik";
+        break;
+    }
+    this.pElem.html(szoveg);
   }
   #htmlosszeAllit() {
     let txt = "<p>Ki következik? </p>";
